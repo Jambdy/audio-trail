@@ -1,7 +1,7 @@
 # Development Instructions
 
 ## Development Process
-The Audio Trail application will be developed in clear, documented milestones. Each milestone represents a specific feature or set of features that will be implemented and reviewed before moving to the next phase.
+The Audio Trail application will be developed in clear, documented milestones. Each milestone represents a specific feature or set of features that will be implemented and reviewed before moving to the next phase. Each milestone will have a separate plan document in the docs/milestones folder. The milestone plan will be reviewed by the user before implementation begins.
 
 ## Agent Checkpoints
 At the end of each milestone:
