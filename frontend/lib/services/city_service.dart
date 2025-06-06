@@ -16,7 +16,7 @@ class CityService {
   static Future<List<String>> getSuggestions(String query) async {
     // Simulate network delay
     await Future.delayed(const Duration(milliseconds: 300));
-    
+
     if (query.isEmpty) {
       return [];
     }
@@ -25,4 +25,4 @@ class CityService {
         .where((city) => city.toLowerCase().contains(query.toLowerCase()))
         .toList();
   }
-} 
+}

@@ -3,6 +3,15 @@
         android:label="audio_trail"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <!-- TODO: Create android/app/src/main/res/values/strings.xml with content:
+             <?xml version="1.0" encoding="utf-8"?>
+             <resources>
+                 <string name="MAPS_API_KEY">YOUR_API_KEY</string>
+             </resources>
+             Then update the value below to use @string/MAPS_API_KEY -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY_HERE"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

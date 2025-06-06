@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import '../services/city_service.dart';
+import 'site_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -105,7 +106,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 hintText: 'Enter desired tour duration',
                 border: OutlineInputBorder(),
               ),
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*')),
               ],
@@ -123,7 +125,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 hintText: 'Enter maximum walking distance',
                 border: OutlineInputBorder(),
               ),
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*')),
               ],
@@ -138,8 +141,18 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: _isFormValid
                   ? () {
                       final time = double.tryParse(_timeController.text) ?? 2.0;
-                      final distance = double.tryParse(_distanceController.text) ?? 2.0;
-                      // TODO: Implement guide creation with time and distance
+                      final distance =
+                          double.tryParse(_distanceController.text) ?? 2.0;
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SiteListScreen(
+                            city: _selectedCity!,
+                            totalTime: time,
+                            totalDistance: distance,
+                          ),
+                        ),
+                      );
                     }
                   : null,
               style: ElevatedButton.styleFrom(
@@ -152,4 +165,4 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-} 
+}

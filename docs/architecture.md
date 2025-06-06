@@ -3,6 +3,8 @@
 ## Overview
 The Audio Trail application follows the Model-View-ViewModel (MVVM) architectural pattern to ensure separation of concerns, maintainability, and testability. The application uses Firebase as its backend platform for data storage, authentication, and cloud services.
 
+The frontend flutter app will be in the frontend folder.
+
 ## Core Architecture Components
 
 ### Backend Services (Firebase)
